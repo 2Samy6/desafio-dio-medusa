@@ -30,7 +30,7 @@ Eu configurei as duas máquinas em **"Rede Exclusiva de Hospedeiro" (Host-Only)*
 **Primeira Dificuldade (e Aprendizado!):**
 Logo que liguei o Metasploitable 2, ele deu um erro de "Kernel Panic" (como na imagem abaixo).
 
-`![Erro de "Kernel Panic"](./imagens/kernel_panic.png)`
+![Erro de "Kernel Panic"](./imagens/kernel_panic.png)
 
 Descobri que isso é comum e aprendi a corrigir: tive que reiniciar, apertar `'e'` na tela de boot (o GRUB) e adicionar `noapic` no final da linha do kernel. Isso fez o sistema ligar! 
 
@@ -58,7 +58,7 @@ Isso me mostrou que as portas do FTP (21), HTTP (80) e SMB (445) estavam abertas
 - **O que aconteceu?**
 O Medusa testou as combinações e sucesso, ele achou o login `msfadmin` com a senha `msfadmin`.
 - **Prova (Screenshot):**
-  `![Resultado do Medusa no FTP](./imagens/ftp.png)`
+  ![Resultado do Medusa no FTP](./imagens/ftp.png)
 - **Como eu me defenderia disso?**
     1. Não usar senhas óbvias!
     2. Instalar um programa tipo "Fail2Ban", que bane o IP de quem errar a senha muitas vezes.
@@ -79,7 +79,7 @@ O Medusa testou as combinações e sucesso, ele achou o login `msfadmin` com a s
 - **O que aconteceu?**
 O Medusa reportou 4 sucessos, mas ao analisar, percebi que 3 eram falsos positivos, pois o `FAIL` string não foi específico o suficiente. O login correto validado manualmente é login `admin` com a senha `password`.
 - **Prova (Screenshot):**
-  `![Resultado do Medusa no DVWA](./imagens/dvwa.png)`
+  ![Resultado do Medusa no DVWA](./imagens/dvwa.png)
 
 ### Teste 3: "Password Spraying" no SMB (Porta 445)
 
@@ -94,7 +94,7 @@ O Medusa reportou 4 sucessos, mas ao analisar, percebi que 3 eram falsos positiv
 - **O que aconteceu?**
 O Medusa mostrou que a senha `msfadmin` funcionava para o usuário `msfadmin`. Isso confirma que essa senha é fraca e reutilizada.
 - **Prova (Screenshot):**
-  `![Resultado do Medusa no SMB](imagens/smb.png)`
+  ![Resultado do Medusa no SMB](imagens/smb.png)
 - **Como eu me defenderia disso?**
     1. Uma política de senhas que **proíbe** senhas óbvias.
     2. Monitorar a rede para ver se alguém está tentando logar em várias contas com a mesma senha.
